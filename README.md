@@ -9,4 +9,5 @@
 - **NodeJS**, **VueJS** version 2.
 ### Hướng dẫn sử dụng
 #### Clone git repository
-Mở terminal Git Bash tại thư mục htdocs của XAMPP
+- Mở terminal Git Bash tại thư mục htdocs của XAMPP
+`git clone https://github.com/ducducqn123/Website-Selling-Food.git`
