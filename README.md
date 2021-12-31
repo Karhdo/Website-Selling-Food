@@ -15,7 +15,7 @@
 - Mở Visual Studio Code.
 - Thêm File **.env** vào thự mục **finalproject** có nội dung [env-backend](324234234).
 - Thêm File **.env** vào thự mục **frontend** có nội dung [env-frontend](324234234).
-- Thêm Folder **product** vào `Website-Selling-Food\finalproject\storage\app\public`.
+- Thêm Folder **product** vào `Website-Selling-Food\finalproject\storage\app\public`
 - Thêm Folder **storage** vào `Website-Selling-Food\finalproject\public`
 #### Run code:
 - Tiếp tục ở terminal vừa clone git repository.  
