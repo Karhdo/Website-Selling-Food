@@ -1,0 +1,5 @@
+.product_image{
+    width: 150px;
+    height: 100px;
+    object-fit: cover; /* để ảnh không vỡ*/
+}

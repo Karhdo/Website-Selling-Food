@@ -1,0 +1,15 @@
+.select2-container, .select2-selection{
+    height: 40px !important;
+}
+.select2-selection__arrow{
+    top: 7px !important;
+}
+
+.image_detail_product{
+    width: 50%;
+}
+
+.alert-danger{
+    margin-top: 5px;
+    padding: 3px 5px;
+}
