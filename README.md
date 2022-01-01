@@ -31,7 +31,7 @@
   - Thực hiện lệnh: `php artisan serve --port=8080`
 - Mở thêm một terminal mới chạy giao diện: `cd frontend`
   - Cài đặt `composer install`
-  - npm install --save-dev cross-env
+  - Cài đặt `npm install --save-dev cross-env`
   - Thực hiện lệnh: `npm run watch`
   - Code Front-end được chạy ở port 8080.
 ## Demo
