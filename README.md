@@ -9,7 +9,7 @@
 - Front-end: **NodeJS**, **VueJS** version 2, **Laravel** version 7.30.6.
 ### Hướng dẫn sử dụng
 #### Clone git repository
-- Khỏi động XAMPP.
+- Khởi động XAMPP.
 - Mở terminal Git Bash tại thư mục htdocs của XAMPP.
 - Chạy lệnh `git clone https://github.com/ducducqn123/Website-Selling-Food.git`
 #### Import database
