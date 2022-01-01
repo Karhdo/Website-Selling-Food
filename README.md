@@ -17,8 +17,8 @@
 - Improt database [project.sql](env_and_database/selling_food.sql) vào trang **phpMyAdmin**.
 #### Add file environment
 - Mở Visual Studio Code.
-- Thêm File **.env** vào thự mục **finalproject** có nội dung [env-backend](env_and_image/env_backend.txt).
-- Thêm File **.env** vào thự mục **frontend** có nội dung [env-frontend](env_and_image/env_frontend.txt).
+- Thêm File **.env** vào thự mục **finalproject** có nội dung [env-backend](env_and_database/env_backend.txt).
+- Thêm File **.env** vào thự mục **frontend** có nội dung [env-frontend](env_and_database/env_frontend.txt).
 #### Run code:
 - Tiếp tục ở terminal vừa clone git repository.  
 - Run **serve Back-end**: `cd finalproject`
