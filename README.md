@@ -13,7 +13,7 @@
 - Chạy lệnh `git clone https://github.com/ducducqn123/Website-Selling-Food.git`
 #### Import database
 - Mở trang **phpMyAdmin**.
-- Improt database  vào trang **phpMyAdmin**.
+- Improt database [project.sql](env_and_database/project.sql) vào trang **phpMyAdmin**.
 #### Add file environment
 - Mở Visual Studio Code.
 - Thêm File **.env** vào thự mục **finalproject** có nội dung [env-backend](env_and_image/env_backend.txt).
