@@ -11,7 +11,10 @@
 #### Clone git repository
 - Mở terminal Git Bash tại thư mục htdocs của XAMPP.
 - Chạy lệnh `git clone https://github.com/ducducqn123/Website-Selling-Food.git`
-### Thêm các File và Folder
+#### Import database
+- Mở trang **phpMyAdmin**.
+- Improt database  vào trang **phpMyAdmin**.
+#### Add file environment
 - Mở Visual Studio Code.
 - Thêm File **.env** vào thự mục **finalproject** có nội dung [env-backend](env_and_image/env_backend.txt).
 - Thêm File **.env** vào thự mục **frontend** có nội dung [env-frontend](env_and_image/env_frontend.txt).
