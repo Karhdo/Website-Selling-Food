@@ -29,7 +29,7 @@
   - User: 19521383@gm.uit.edu.vn/ Password:
 - Mở thêm một terminal mới để run **serve Front-end**: `cd frontend`
   - Cài đặt `composer install`  
-  - Thực hiện lệnh: `php artisan serve --port=8080`
+  - Thực hiện lệnh: `php artisan serve --port=8060`
 - Mở thêm một terminal mới chạy giao diện: `cd frontend`
   - Cài đặt `composer install`
   - Cài đặt `npm install --save-dev cross-env`
