@@ -133,7 +133,7 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
         });
       } else {
         var userId = localStorage.getItem("user-id");
-        var urlCart = "http://localhost:8080/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
+        var urlCart = "http://localhost:8060/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
         axios.get(urlCart).then(function (response) {
           if (response.data.code == 200) {
             _this2.productMoney = _this2.product[0].price * quantity;

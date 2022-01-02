@@ -214,7 +214,7 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
     getListCategory: function getListCategory() {
       var _this = this;
 
-      axios.get('http://localhost:8080/api/frontend/store/listcategory').then(function (response) {
+      axios.get('http://localhost:8060/api/frontend/store/listcategory').then(function (response) {
         _this.categories = response.data;
       })["catch"](function (error) {
         console.log(error);
@@ -231,7 +231,7 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
       var myarg = this.$route.params.name_sort;
       var min_price = this.value[0];
       var max_price = this.value[1];
-      var str = 'http://localhost:8080/api/frontend/store/sortandfilterproduct';
+      var str = 'http://localhost:8060/api/frontend/store/sortandfilterproduct';
       axios.get(str, {
         params: {
           name: String(myarg),
@@ -276,7 +276,7 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
         });
       } else {
         var userId = localStorage.getItem("user-id");
-        var urlCart = "http://localhost:8080/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
+        var urlCart = "http://localhost:8060/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
         axios.get(urlCart).then(function (response) {
           if (response.data.code == 200) {
             _this3.productMoney = price;

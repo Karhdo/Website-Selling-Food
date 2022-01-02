@@ -11,24 +11,51 @@
                     </li>
                     <li class="header__contact-item">
                         <a href="#">
-                            <b-icon icon="telephone-fill" font-scale="1.25"></b-icon>
+                            <b-icon
+                                icon="telephone-fill"
+                                font-scale="1.25"
+                            ></b-icon>
                             <span>0907123456</span>
                         </a>
                     </li>
                 </ul>
                 <ul class="header__option flex-row">
-                    <li class="header__option-item header__top-left" v-if="hasToken">
-                        <span class="option-item__username"> {{user.username}}</span> /
-                        <span class="option-item__logout" @click.prevent="logoutUser">Đăng xuất</span>
-                    </li>                    
+                    <li
+                        class="header__option-item header__top-left"
+                        v-if="hasToken"
+                    >
+                        <span class="option-item__username">
+                            {{ user.username }}</span
+                        >
+                        /
+                        <span
+                            class="option-item__logout"
+                            @click.prevent="logoutUser"
+                            >Đăng xuất</span
+                        >
+                    </li>
                     <li class="header__option-item header__top-left" v-else>
-                        <router-link class="option-item__login" to="/Login"> Đăng nhập</router-link> /
-                        <router-link class="option-item__register" to="/Register">Đăng ký</router-link>
+                        <router-link class="option-item__login" to="/Login">
+                            Đăng nhập</router-link
+                        >
+                        /
+                        <router-link
+                            class="option-item__register"
+                            to="/Register"
+                            >Đăng ký</router-link
+                        >
                     </li>
                     <li class="header__option-item">
                         <a href="#">
-                            <span class="option-item__product-cart" @click.prevent="ViewCart">
-                                Giỏ hàng / {{ parseInt(totalPrice).toLocaleString("vi-VN") }} đ
+                            <span
+                                class="option-item__product-cart"
+                                @click.prevent="ViewCart"
+                            >
+                                Giỏ hàng /
+                                {{
+                                    parseInt(totalPrice).toLocaleString("vi-VN")
+                                }}
+                                đ
                                 <b-icon icon="cart4" font-scale="1.25"></b-icon>
                             </span>
                         </a>
@@ -39,20 +66,33 @@
             <div class="header__main flex-row">
                 <div id="logo" class="header__logo">
                     <router-link class="header__logo-img" to="/">
-                        <img src="http://localhost:8000/storage/product/3/unCKbIXgQaoPOwlYYuxE.png" alt="" />
+                        <img
+                            src="http://localhost:8000/storage/product/3/unCKbIXgQaoPOwlYYuxE.png"
+                            alt=""
+                        />
                     </router-link>
                 </div>
 
                 <div class="header__nav">
                     <ul class="nav flex-row">
                         <li class="nav__item">
-                            <router-link class="nav__item-link" to="/">Trang chủ</router-link>
+                            <router-link class="nav__item-link" to="/"
+                                >Trang chủ</router-link
+                            >
                         </li>
                         <li class="nav__item">
-                            <router-link class="nav__item-link" to="/Intro">Giới thiệu</router-link>
-                        </li>   
+                            <router-link class="nav__item-link" to="/Intro"
+                                >Giới thiệu</router-link
+                            >
+                        </li>
                         <li class="nav__item">
-                            <router-link class="nav__item-link" :to="{name: 'StoreListItem', params: {slug: 'trai-cay', id: 17}}">
+                            <router-link
+                                class="nav__item-link"
+                                :to="{
+                                    name: 'StoreListItem',
+                                    params: { slug: 'trai-cay', id: 17 },
+                                }"
+                            >
                                 Cửa hàng
                                 <b-icon icon="chevron-compact-down"></b-icon>
                             </router-link>
@@ -60,41 +100,81 @@
                                 <!-- <li class="subnav__item"><a href="#">Rau củ</a></li>
                                 <li class="subnav__item"><a href="#">Đồ uống</a></li>
                                 <li class="subnav__item"><a href="#">Trái cây</a></li> -->
-                                <li class="subnav__item" v-for="sub in subMenu" :key="sub.id">
-                                    <router-link :to="{name: 'StoreListItem', params: {slug: sub.slug, id: sub.id}}">
+                                <li
+                                    class="subnav__item"
+                                    v-for="sub in subMenu"
+                                    :key="sub.id"
+                                >
+                                    <router-link
+                                        :to="{
+                                            name: 'StoreListItem',
+                                            params: {
+                                                slug: sub.slug,
+                                                id: sub.id,
+                                            },
+                                        }"
+                                    >
                                         {{ sub.name }}
                                     </router-link>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav__item">
-                            <router-link href="#" class="nav__item-link" to="/Contact">Liên hệ</router-link>
+                            <router-link
+                                href="#"
+                                class="nav__item-link"
+                                to="/Contact"
+                                >Liên hệ</router-link
+                            >
                         </li>
                     </ul>
                 </div>
 
                 <div class="header__search">
                     <div class="form__search">
-                            <input type="text" placeholder="Tìm kiếm..." v-model="productSearch"/>
-                            <div class="btn-search">
-                                <button type="submit" @click="searchProduct">
-                                    <b-icon icon="search" font-scale="1"></b-icon>
-                                </button>
-                            </div>
+                        <input
+                            type="text"
+                            placeholder="Tìm kiếm..."
+                            v-model="productSearch"
+                        />
+                        <div class="btn-search">
+                            <button type="submit" @click="searchProduct">
+                                <b-icon icon="search" font-scale="1"></b-icon>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="header__main-mobile">
                 <label for="nav-mobile-input" class="header__main-mobile__bar">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                        <path fill="#33333" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fas"
+                        data-icon="bars"
+                        class="svg-inline--fa fa-bars fa-w-14"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                    >
+                        <path
+                            fill="#33333"
+                            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+                        ></path>
                     </svg>
                 </label>
 
-                <input type="checkbox" id="nav-mobile-input" style="display: none" />
+                <input
+                    type="checkbox"
+                    id="nav-mobile-input"
+                    style="display: none"
+                />
 
-                <label for="nav-mobile-input" class="mobile__bar__overlay"></label>
+                <label
+                    for="nav-mobile-input"
+                    class="mobile__bar__overlay"
+                ></label>
 
                 <nav class="mobile__bar__nav">
                     <div class="nav-mobile__search">
@@ -104,39 +184,73 @@
                     </div>
                     <ul class="nav-mobile__list">
                         <li class="nav-mobile__item" v-if="hasToken">
-                            <span class="nav-mobile__item-link" to="/Login">Xin chào, {{user.username}}</span>
+                            <span class="nav-mobile__item-link" to="/Login"
+                                >Xin chào, {{ user.username }}</span
+                            >
                         </li>
                         <li class="nav-mobile__item">
-                            <router-link class="nav-mobile__item-link" to="/">Trang chủ</router-link>
+                            <router-link class="nav-mobile__item-link" to="/"
+                                >Trang chủ</router-link
+                            >
                         </li>
                         <li class="nav-mobile__item">
-                            <router-link class="nav-mobile__item-link" to="/Intro">Giới thiệu</router-link>
+                            <router-link
+                                class="nav-mobile__item-link"
+                                to="/Intro"
+                                >Giới thiệu</router-link
+                            >
                         </li>
                         <li class="nav__item">
-                            <router-link class="nav-mobile__item-link" :to="{name: 'StoreListItem', params: {slug: 'trai-cay', id: 17}}"> Cửa hàng </router-link>
+                            <router-link
+                                class="nav-mobile__item-link"
+                                :to="{
+                                    name: 'StoreListItem',
+                                    params: { slug: 'trai-cay', id: 17 },
+                                }"
+                            >
+                                Cửa hàng
+                            </router-link>
                         </li>
                         <li class="nav-mobile__item">
                             <a href="#" class="nav-mobile__item-link">
-                                <span class="option-item__product-cart" @click.prevent="ViewCart">
+                                <span
+                                    class="option-item__product-cart"
+                                    @click.prevent="ViewCart"
+                                >
                                     Giỏ hàng
                                 </span>
                             </a>
-                        </li>                                             
+                        </li>
                         <li class="nav-mobile__item">
-                            <router-link class="nav-mobile__item-link" to="/Contact">Liên hệ</router-link>
+                            <router-link
+                                class="nav-mobile__item-link"
+                                to="/Contact"
+                                >Liên hệ</router-link
+                            >
                         </li>
                         <li class="nav-mobile__item" v-if="hasToken">
-                            <span class="nav-mobile__item-link" @click.prevent="logoutUser">Đăng xuất</span>
+                            <span
+                                class="nav-mobile__item-link"
+                                @click.prevent="logoutUser"
+                                >Đăng xuất</span
+                            >
                         </li>
                         <li class="nav-mobile__item" v-else>
-                            <router-link class="nav-mobile__item-link" to="/Login">Đăng nhập</router-link>
+                            <router-link
+                                class="nav-mobile__item-link"
+                                to="/Login"
+                                >Đăng nhập</router-link
+                            >
                         </li>
                     </ul>
                 </nav>
 
                 <div class="header__main-mobile__logo">
                     <router-link to="/" class="mobile__logo-link">
-                        <img src="http://localhost:8000/storage/product/3/unCKbIXgQaoPOwlYYuxE.png" alt="" />
+                        <img
+                            src="http://localhost:8000/storage/product/3/unCKbIXgQaoPOwlYYuxE.png"
+                            alt=""
+                        />
                     </router-link>
                 </div>
             </div>
@@ -145,140 +259,130 @@
 </template>
 
 <script>
-import {eventBus} from "../app.js";
-const axios = require('axios');
+import { eventBus } from "../app.js";
+const axios = require("axios");
 export default {
-    components: {
-    },
+    components: {},
 
     data() {
         return {
             totalPrice: 0,
             hasToken: false,
             user: {
-                "id": '',
-                "name": '',
-                "email": ''
+                id: "",
+                name: "",
+                email: "",
             },
-            productSearch: '',
+            productSearch: "",
             subMenu: [],
-        }
+        };
     },
 
-    computed: {
-    },
+    computed: {},
 
     methods: {
         getPrice() {
-            var token = localStorage.getItem('user-token');
-            if(token == '')
-            {
-                this.totalPrice = 0
-            }
-            else
-            {
-                var str = 'http://localhost:8080/Store'
-                axios.get(str, {
-                    'headers': {
-                        "userId": localStorage.getItem("user-id")
-                    }
-                })
-                .then(response => {
-                    this.totalPrice = response.data
-                })
-                .catch(error => {
-                    console.log(error)
-                })
+            var token = localStorage.getItem("user-token");
+            if (token == "") {
+                this.totalPrice = 0;
+            } else {
+                var str = "http://localhost:8060/Store";
+                axios
+                    .get(str, {
+                        headers: {
+                            userId: localStorage.getItem("user-id"),
+                        },
+                    })
+                    .then((response) => {
+                        this.totalPrice = response.data;
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
             }
         },
 
         logoutUser() {
-            var token = localStorage.getItem('user-token');
-            
-            axios.get('http://localhost:8080/api/frontend/logout', {
-                'headers': {
-                    "name": token
-                }
-            })
-            .then(response => {
-                if(response.data.code == 200) {
-                    this.hasToken = false
-                    this.totalPrice = 0
-                    localStorage.setItem('user-token', '')
-                    alert('Logout thành công')
-                    this.$router.push({name: 'HomePage'})
-                }
-            })
-            .catch(error => {
+            var token = localStorage.getItem("user-token");
 
-            })
+            axios
+                .get("http://localhost:8060/api/frontend/logout", {
+                    headers: {
+                        name: token,
+                    },
+                })
+                .then((response) => {
+                    if (response.data.code == 200) {
+                        this.hasToken = false;
+                        this.totalPrice = 0;
+                        localStorage.setItem("user-token", "");
+                        alert("Logout thành công");
+                        this.$router.push({ name: "HomePage" });
+                    }
+                })
+                .catch((error) => {});
         },
 
         ViewCart() {
-            var token = localStorage.getItem('user-token');
-            if(token == '')
-            {
-                alert('Bạn cần đăng nhập trước khi xem giỏ hàng!')
-                this.$router.push({name: 'Login'})
-            }
-            else
-            {
-                this.$router.push({name: 'ProductCart'})
+            var token = localStorage.getItem("user-token");
+            if (token == "") {
+                alert("Bạn cần đăng nhập trước khi xem giỏ hàng!");
+                this.$router.push({ name: "Login" });
+            } else {
+                this.$router.push({ name: "ProductCart" });
             }
         },
-        searchProduct () {
+        searchProduct() {
             this.$router.push({
-                name: 'StoreSearchItem',
+                name: "StoreSearchItem",
                 params: {
-                    nameSearch: this.productSearch
-                }
-            })
+                    nameSearch: this.productSearch,
+                },
+            });
         },
         getSubMenu() {
-            axios.get('http://localhost:8080/api/frontend/store/listcategory')
-            .then(response => {
-                this.subMenu = response.data
-            })
-            .catch(error => {
-                console.log(error)
-            }) 
-        }
+            axios
+                .get("http://localhost:8060/api/frontend/store/listcategory")
+                .then((response) => {
+                    this.subMenu = response.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
     },
-    
-    mounted() {
-        var token = localStorage.getItem('user-token');
-        if(token == '')
-        {
-        }
-        else
-        {
-            this.hasToken = true;
-            axios.get('http://localhost:8080/api/frontend/getInforUser', {
-                'headers': {
-                    "name": token
-                }
-            })
-            .then(response => {
-                this.user = response.data
-                localStorage.setItem('user-id', response.data.userid)
-            })
-            .catch(error => {
 
-            })
-        }  
-        this.getPrice()
-        this.getSubMenu()
+    mounted() {
+        var token = localStorage.getItem("user-token");
+
+        if (token == "" || token == null) {
+        } else {
+            this.hasToken = true;
+            axios
+                .get("http://localhost:8060/api/frontend/getInforUser", {
+                    headers: {
+                        name: token,
+                    },
+                })
+                .then((response) => {
+                    this.user = response.data;
+                    localStorage.setItem("user-id", response.data.userid);
+                })
+                .catch((error) => {});
+        }
+        this.getPrice();
+        this.getSubMenu();
     },
 
     created() {
-        eventBus.$on('productMoney', (money) => {
-            this.totalPrice += money
-        })
+        eventBus.$on("productMoney", (money) => {
+            this.totalPrice += money;
+        });
 
-        eventBus.$on('totalMoneyUpdate', (money) => {
-            this.totalPrice = money
-        })
-    }
+        eventBus.$on("totalMoneyUpdate", (money) => {
+            this.totalPrice = money;
+        });
+    },
 };
 </script>
 
@@ -308,7 +412,7 @@ export default {
     left: 0;
     right: 0;
     z-index: 2;
-    box-shadow: 1px 1px 10px rgb(0 0 0 / 15%)
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 15%);
 }
 
 .header .header__wrapper {
@@ -555,7 +659,7 @@ export default {
     list-style: none;
 }
 
-.nav-mobile__item:first-child span{
+.nav-mobile__item:first-child span {
     color: var(--primary-color);
 }
 
@@ -624,10 +728,9 @@ export default {
     .header__option {
         display: none;
     }
-    
+
     .header .header__wrapper {
         height: 100px;
     }
-
 }
 </style>

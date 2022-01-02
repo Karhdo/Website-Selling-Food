@@ -1,0 +1,11 @@
+import * as Rules from './rules';
+import { localize } from './localize';
+import { extend } from './extend';
+declare const version = "__VERSION__";
+export { Rules, version, localize, extend };
+export { configure } from './config';
+export { setInteractionMode } from './modes';
+export { validate } from './validate';
+export { ValidationProvider, ValidationObserver, withValidation } from './components';
+export { normalizeRules } from './utils/rules';
+export { localeChanged } from './localeChanged';

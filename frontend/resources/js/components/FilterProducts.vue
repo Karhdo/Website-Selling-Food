@@ -187,7 +187,7 @@ export default {
         },
         getListCategory() {
 
-            axios.get('http://localhost:8080/api/frontend/store/listcategory')
+            axios.get('http://localhost:8060/api/frontend/store/listcategory')
             .then(response => {
                 this.categories = response.data
             })
@@ -200,7 +200,7 @@ export default {
             if (typeof page === 'undefined') {
                 page = 1;
             }
-            var str = 'http://localhost:8080/api/frontend/store/filterproduct/' + this.activeItemId + '/' + this.value[0] + '/' + this.value[1] + '?page=' + page;
+            var str = 'http://localhost:8060/api/frontend/store/filterproduct/' + this.activeItemId + '/' + this.value[0] + '/' + this.value[1] + '?page=' + page;
             axios.get(str)
             .then(response => {
                 this.products = response.data
@@ -242,7 +242,7 @@ export default {
             {
                 var userId = localStorage.getItem("user-id")
                 var urlCart =
-                    "http://localhost:8080/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
+                    "http://localhost:8060/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
                 axios
                     .get(urlCart)
                     .then((response) => {

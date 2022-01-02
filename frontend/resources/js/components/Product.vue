@@ -121,7 +121,7 @@ export default {
             {
                 var userId = localStorage.getItem("user-id")
                 var urlCart =
-                    "http://localhost:8080/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
+                    "http://localhost:8060/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
                 axios
                     .get(urlCart)
                     .then((response) => {

@@ -186,7 +186,7 @@ export default {
 
         },
         getListCategory() {
-            var str = 'http://localhost:8080/api/frontend/store/listcategory'
+            var str = 'http://localhost:8060/api/frontend/store/listcategory'
             axios.get(str)
             .then(response => {
                 this.categories = response.data
@@ -221,7 +221,7 @@ export default {
                 page = 1;
             }
             var myarg = this.$route.params.name_sort
-            axios.get('http://localhost:8080/api/frontend/store/sortproduct', {
+            axios.get('http://localhost:8060/api/frontend/store/sortproduct', {
                 params: {
                     name: String(myarg),
                     category_id: this.activeItemId,
@@ -261,7 +261,7 @@ export default {
             {
                 var userId = localStorage.getItem("user-id")
                 var urlCart =
-                    "http://localhost:8080/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
+                    "http://localhost:8060/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
                 axios
                     .get(urlCart)
                     .then((response) => {

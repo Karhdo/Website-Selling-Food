@@ -198,7 +198,7 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
     getListCategory: function getListCategory() {
       var _this = this;
 
-      axios.get('http://localhost:8080/api/frontend/store/listcategory').then(function (response) {
+      axios.get('http://localhost:8060/api/frontend/store/listcategory').then(function (response) {
         _this.categories = response.data;
       })["catch"](function (error) {
         console.log(error);
@@ -212,7 +212,7 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
         page = 1;
       }
 
-      var str = 'http://localhost:8080/api/frontend/store/listproduct/' + this.activeItemId + '?page=' + page;
+      var str = 'http://localhost:8060/api/frontend/store/listproduct/' + this.activeItemId + '?page=' + page;
       axios.get(str).then(function (response) {
         _this2.products = response.data;
       })["catch"](function (error) {
@@ -261,7 +261,7 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
         });
       } else {
         var userId = localStorage.getItem("user-id");
-        var urlCart = "http://localhost:8080/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
+        var urlCart = "http://localhost:8060/Product/frontend/product/add-to-cart/" + id + "/" + quantity + "/" + userId;
         axios.get(urlCart).then(function (response) {
           if (response.data.code == 200) {
             _this3.productMoney = price;
