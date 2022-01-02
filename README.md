@@ -14,6 +14,7 @@
 - Chạy lệnh `git clone https://github.com/ducducqn123/Website-Selling-Food.git`
 #### Import database
 - Mở trang **phpMyAdmin**.
+- Tạo database mới có tên: selling_food
 - Improt database [project.sql](env_and_database/selling_food.sql) vào trang **phpMyAdmin**.
 #### Add file environment
 - Mở Visual Studio Code.
@@ -33,6 +34,6 @@
   - Cài đặt `composer install`
   - Cài đặt `npm install --save-dev cross-env`
   - Thực hiện lệnh: `npm run watch`
-  - Code Front-end được chạy ở port 8080.
+  - Code Front-end được chạy ở port 8060.
 ## Demo
 <p align='center'><img style="height: 800px" src="https://github.com/ducducqn123/Website-Selling-Food/blob/ce4ab91b045d777d82beee1935e5df8eed736797/demo.png"></p>
