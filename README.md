@@ -26,7 +26,7 @@
   - Cài đặt `composer install` 
   - Thực hiện lệnh `php artisan serve`
   - Code Back-end được chạy ở port 8000.
-  - User: 19521383@gm.uit.edu.vn/ Password:
+  - User: 19521383@gmail.com/ Password: 123123123
 - Mở thêm một terminal mới để run **serve Front-end**: `cd frontend`
   - Cài đặt `composer install`  
   - Thực hiện lệnh: `php artisan serve --port=8060`
