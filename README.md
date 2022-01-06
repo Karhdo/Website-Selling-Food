@@ -16,14 +16,11 @@
 - Mở trang **phpMyAdmin**.
 - Tạo database mới có tên: selling_food
 - Improt database [project.sql](env_and_database/selling_food.sql) vào trang **phpMyAdmin**.
-#### Add file environment
-- Mở Visual Studio Code.
-- Thêm File **.env** vào thự mục **finalproject** có nội dung [env-backend](env_and_database/env_backend.txt).
-- Thêm File **.env** vào thự mục **frontend** có nội dung [env-frontend](env_and_database/env_frontend.txt).
+#### Download Composer
+- Vào đường link https://getcomposer.org/download/ chọn Composer-Setup.exe để tải composer
 #### Run code:
 - Tiếp tục ở terminal vừa clone git repository.  
 - Run **serve Back-end**: `cd finalproject`
-  - Cài đặt `composer install` 
   - Thực hiện lệnh `php artisan serve`
   - Code Back-end được chạy ở port 8000.
   - User: 19521383@gmail.com/ Password: 123123123
@@ -31,7 +28,6 @@
   - Cài đặt `composer install`  
   - Thực hiện lệnh: `php artisan serve --port=8060`
 - Mở thêm một terminal mới chạy giao diện: `cd frontend`
-  - Cài đặt `composer install`
   - Cài đặt `npm install --save-dev cross-env`
   - Thực hiện lệnh: `npm run watch`
   - Code Front-end được chạy ở port 8060.
