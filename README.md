@@ -25,7 +25,6 @@
   - Code Back-end được chạy ở port 8000.
   - User: 19521383@gmail.com/ Password: 123123123
 - Mở thêm một terminal mới để run **serve Front-end**: `cd frontend`
-  - Cài đặt `composer install`  
   - Thực hiện lệnh: `php artisan serve --port=8060`
 - Mở thêm một terminal mới chạy giao diện: `cd frontend`
   - Cài đặt `npm install --save-dev cross-env`
