@@ -5,8 +5,7 @@
 ## Yêu cầu và Hướng dẫn sử dụng
 ### Yêu cầu
 - Git Bash, Visual Studio Code.
-- Back-end: **PHP** version 7.4.25, **Laravel** version 5.8.38.
-- Front-end: **NodeJS**, **VueJS** version 2, **Laravel** version 7.30.6.
+- PHP version 7.4.25, NodeJS, VueJS version 2.
 ### Hướng dẫn sử dụng
 #### Clone git repository
 - Khởi động XAMPP.
