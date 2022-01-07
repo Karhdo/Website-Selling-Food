@@ -14,7 +14,7 @@
 #### Import database
 - Mở trang **phpMyAdmin**.
 - Tạo database mới có tên: selling_food
-- Improt database [project.sql](env_and_database/selling_food.sql) vào trang **phpMyAdmin**.
+- Improt database [selling_food.sql](database/selling_food.sql) vào trang **phpMyAdmin**.
 #### Download Composer
 - Vào đường link https://getcomposer.org/download/ chọn Composer-Setup.exe để tải composer
 #### Run code:
