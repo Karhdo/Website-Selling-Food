@@ -587,7 +587,8 @@ export default {
     }
 
     .price-order {
-        display: none;
+        display: flex;
+        justify-content: center;
     }
 }
 
