@@ -21,13 +21,13 @@
 - Tiếp tục ở terminal vừa clone git repository.  
 - Run **serve Back-end**: `cd finalproject`
   - Thực hiện lệnh `php artisan serve`
-  - Code Back-end được chạy ở port 8000.
+  - Code Back-end được chạy ở port 8000(localhost:8000/admin).
   - User: 19521383@gmail.com/ Password: 123123123
 - Mở thêm một terminal mới để run **serve Front-end**: `cd frontend`
   - Thực hiện lệnh: `php artisan serve --port=8060`
 - Mở thêm một terminal mới chạy giao diện: `cd frontend`
   - Cài đặt `npm install --save-dev cross-env`
   - Thực hiện lệnh: `npm run watch`
-  - Code Front-end được chạy ở port 8060.
+  - Code Front-end được chạy ở port 8060(localhost:8060).
 ## Demo
 <p align='center'><img style="height: 800px" src="https://github.com/ducducqn123/Website-Selling-Food/blob/ce4ab91b045d777d82beee1935e5df8eed736797/demo.png"></p>
