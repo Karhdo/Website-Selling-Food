@@ -26,8 +26,13 @@
                             <router-link
                                 class="category__item-link"
                                 :to="{name: 'StoreListItem', params: {slug: category.slug, id: category.id}}"
-                                >{{ category.name }}</router-link>                                  
+                                >{{ category.name }}</router-link>     
+                            <!-- <span
+                                class="category__item-link"
+                                @click="LoadPage(category.slug, category.id)"
+                                >{{ category.name }}</span>                                                                 -->
                             </li>
+                            
                         </ul>
                     </div>
                     <div class="filter-price">
@@ -172,9 +177,16 @@ export default {
 
         }
     },
+    watch: {
+        '$route' (to, from) {
+            this.activeItem = to.params.slug;
+            this.activeItemId = to.params.id;
+            this.getListCategory();
+            this.getResults();
+        }
+    },
     methods: {
         getListCategory() {
-
             axios.get('http://localhost:8060/api/frontend/store/listcategory')
             .then(response => {
                 this.categories = response.data
@@ -184,9 +196,6 @@ export default {
             })   
         },
 
-        clickCallback: function(pageNum) {
-         
-        },
         getResults(page) {
             if (typeof page === 'undefined') {
                 page = 1;
@@ -562,7 +571,6 @@ export default {
     }
 
     .price-order {
-        display: flex;
         justify-content: center;
     }
 }

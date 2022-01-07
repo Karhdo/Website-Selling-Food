@@ -177,6 +177,16 @@ export default {
 
         }
     },
+    watch: {
+        '$route' (to, from) {
+            this.activeItem = to.params.slug;
+            this.activeItemId = to.params.id;
+            this.value[0] = to.params.min;
+            this.value[1] = to.params.max;
+            this.getListCategory();
+            this.getResults();
+        }
+    },
     methods: {
         isActive: function (categorySlug) {
             return this.activeItem === categorySlug;
@@ -231,6 +241,18 @@ export default {
             }).catch(()=>{})
         },
 
+        filterProducts: function(activeItem, activeItemId, value) {
+            this.$router.push({
+                name: 'StoreFilter',
+                params: {
+                    slug: activeItem,
+                    id: activeItemId,
+                    min: value[0],
+                    max: value[1]
+                }
+            }).catch(()=>{})
+        },
+        
         addToCart: function (id, quantity, price) {
             var token = localStorage.getItem('user-token');
             if(token == '')
@@ -565,7 +587,6 @@ export default {
     }
 
     .price-order {
-        display: flex;
         justify-content: center;
     }
 }

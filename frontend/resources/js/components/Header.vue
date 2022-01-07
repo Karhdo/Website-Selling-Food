@@ -97,9 +97,6 @@
                                 <b-icon icon="chevron-compact-down"></b-icon>
                             </router-link>
                             <ul class="subnav">
-                                <!-- <li class="subnav__item"><a href="#">Rau củ</a></li>
-                                <li class="subnav__item"><a href="#">Đồ uống</a></li>
-                                <li class="subnav__item"><a href="#">Trái cây</a></li> -->
                                 <li
                                     class="subnav__item"
                                     v-for="sub in subMenu"

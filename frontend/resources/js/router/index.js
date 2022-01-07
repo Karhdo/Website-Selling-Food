@@ -15,11 +15,6 @@ const routes = [
         name: "Intro",
         component: () => import("../components/Intro.vue"),
     },
-    // {
-    //     path: "/Store",
-    //     name: "Store",
-    //     component: () => import("../components/Store.vue"),
-    // },
     {
         path: "/Store/?search=:nameSearch",
         name: "StoreSearchItem",

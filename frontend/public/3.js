@@ -204,6 +204,14 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
     },
     filteredItems: function filteredItems() {}
   },
+  watch: {
+    '$route': function $route(to, from) {
+      this.activeItem = to.params.slug;
+      this.activeItemId = to.params.id;
+      this.getListCategory();
+      this.getResults();
+    }
+  },
   methods: {
     isActive: function isActive(categorySlug) {
       return this.activeItem === categorySlug;

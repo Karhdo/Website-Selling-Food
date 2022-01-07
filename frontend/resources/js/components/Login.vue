@@ -57,6 +57,10 @@ export default {
                     alert('Đăng nhập thành công')
                     this.$router.push({name: 'HomePage'})
                 }
+                else
+                {
+                    alert(response.data.data)
+                }
             })
             .catch(error => {
                 this.errors = error.response.data.errors;

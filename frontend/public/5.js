@@ -141,6 +141,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -194,6 +199,14 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
   computed: {
     filteredItems: function filteredItems() {}
   },
+  watch: {
+    '$route': function $route(to, from) {
+      this.activeItem = to.params.slug;
+      this.activeItemId = to.params.id;
+      this.getListCategory();
+      this.getResults();
+    }
+  },
   methods: {
     getListCategory: function getListCategory() {
       var _this = this;
@@ -204,7 +217,6 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
         console.log(error);
       });
     },
-    clickCallback: function clickCallback(pageNum) {},
     getResults: function getResults(page) {
       var _this2 = this;
 

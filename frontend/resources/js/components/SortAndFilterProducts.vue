@@ -182,6 +182,14 @@ export default {
 
         }
     },
+    watch: {
+        '$route'(to, from) {
+            this.activeItem = to.params.slug;
+            this.activeItemId = to.params.id;
+            this.getListCategory();
+            this.getResults();
+        }
+    },
     methods: {
         isActive: function (categorySlug) {
             return this.activeItem === categorySlug;
@@ -587,8 +595,7 @@ export default {
     }
 
     .price-order {
-        display: flex;
-        justify-content: center;
+        display: none;
     }
 }
 

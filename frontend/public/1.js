@@ -199,6 +199,16 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
     },
     filteredItems: function filteredItems() {}
   },
+  watch: {
+    '$route': function $route(to, from) {
+      this.activeItem = to.params.slug;
+      this.activeItemId = to.params.id;
+      this.value[0] = to.params.min;
+      this.value[1] = to.params.max;
+      this.getListCategory();
+      this.getResults();
+    }
+  },
   methods: {
     isActive: function isActive(categorySlug) {
       return this.activeItem === categorySlug;
@@ -245,6 +255,17 @@ __webpack_require__(/*! vue-resource */ "./node_modules/vue-resource/dist/vue-re
         params: {
           slug: slug,
           id: id
+        }
+      })["catch"](function () {});
+    },
+    filterProducts: function filterProducts(activeItem, activeItemId, value) {
+      this.$router.push({
+        name: 'StoreFilter',
+        params: {
+          slug: activeItem,
+          id: activeItemId,
+          min: value[0],
+          max: value[1]
         }
       })["catch"](function () {});
     },

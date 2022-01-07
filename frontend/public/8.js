@@ -72,9 +72,15 @@ var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
           _this.$router.push({
             name: 'HomePage'
           });
+        } else {
+          alert(response.data.data);
         }
       })["catch"](function (error) {
         _this.errors = error.response.data.errors;
+
+        if (error.message == "Request failed with status code 422") {
+          alert("Sai tên tài khoản hoặc mật khẩu. Vui lòng kiểm tra lại");
+        }
       });
     }
   }
