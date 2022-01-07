@@ -562,6 +562,7 @@ export default {
     }
 
     .price-order {
+        display: flex;
         justify-content: center;
     }
 }
