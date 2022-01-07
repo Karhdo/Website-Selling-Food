@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -43,12 +44,9 @@ class LoginController extends Controller
                 'data' => $customerSession
             ], 200);
         }
-        else {
-            return response()->json([
-                'code' => 401,
-                'message' => 'Username or pass khong dung'
-            ], 401);
-        }
+        throw ValidationException::withMessages([
+            'email' =>['The provided credentials are incorect.']
+        ]);
     }
 
     public function logout(Request $request) {
