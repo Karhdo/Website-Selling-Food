@@ -60,6 +60,9 @@ export default {
             })
             .catch(error => {
                 this.errors = error.response.data.errors;
+                if(error.message == "Request failed with status code 422") {
+                    alert("Sai tên tài khoản hoặc mật khẩu. Vui lòng kiểm tra lại")
+                }
             })
         }
     }
