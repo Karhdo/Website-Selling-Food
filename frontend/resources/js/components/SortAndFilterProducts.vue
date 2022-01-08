@@ -186,6 +186,9 @@ export default {
         '$route'(to, from) {
             this.activeItem = to.params.slug;
             this.activeItemId = to.params.id;
+            this.value[0] = to.params.min;
+            this.value[1] = to.params.max;
+            this.selected = to.params.name_sort
             this.getListCategory();
             this.getResults();
         }
@@ -196,7 +199,6 @@ export default {
         },
         setActive: function (slug, categoryId) {
             this.activeItem = slug; // no need for Vue.set()
-
         },
         getListCategory() {
 
@@ -236,28 +238,31 @@ export default {
 
             })
         },
-        SortItem: function(myarg){
-            
+        SortItem: function(myarg){      
             this.$router.push({
-                name: 'StoreSort',
+                name: 'StoreSortAndFilter',
                 params: {
                     slug: this.activeItem,
                     name_sort: myarg,
-                    category_id: this.activeItemId
+                    id: this.activeItemId,
+                    min: this.value[0],
+                    max: this.value[1]
                 }
-            })
+            }).catch(()=>{})  
         }, 
-        getRoute(slug, id) {
-            this.$router.push({
-                name: 'StoreListItem',
-                params: {
-                    slug: slug,
-                    id: id
-                }
-            }).catch(()=>{})
-        },
+        
         filterProducts: function(activeItem, activeItemId, value) {
-            
+            var myarg = this.selected
+            this.$router.push({
+                name: 'StoreSortAndFilter',
+                params: {
+                    slug: activeItem,
+                    name_sort: myarg,
+                    id: activeItemId,
+                    min: value[0],
+                    max: value[1]
+                }
+            }).catch(()=>{})            
         },
 
         addToCart: function (id, quantity, price) {
