@@ -18,10 +18,6 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-import jQuery from 'jquery';
-Vue.prototype.jQuery = jQuery
-
-
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(VueCompositionAPI)
