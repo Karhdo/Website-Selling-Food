@@ -15,7 +15,7 @@
                     </ul>
                 </div>
                 <div class="price-order">
-                    <b-form-select class="arr-form" v-model="selected" :options="options" @change="SortItem"></b-form-select>
+                    <b-form-select class="arr-form" v-model="selected" :options="options" @change="getResults"></b-form-select>
                 </div>
             </b-row>
             <b-row class="content">
@@ -177,6 +177,15 @@ export default {
 
         }
     },
+    watch: {
+        '$route' (to, from) {
+            this.getListCategory();
+            this.activeItemId = to.params.category_id
+            this.activeItem = to.params.slug
+            this.selected = to.params.name_sort
+            this.SortItem();
+        }
+    },    
     methods: {
         isActive: function (categorySlug) {
             return this.activeItem === categorySlug;
@@ -190,9 +199,6 @@ export default {
             axios.get(str)
             .then(response => {
                 this.categories = response.data
-                // this.categories.forEach(element => {
-                //     element.link = "/store/" + element.slug
-                // });
             })
             .catch(error => {
                 console.log(error)
@@ -202,19 +208,15 @@ export default {
         clickCallback: function(pageNum) {
          
         },
-        getResults(page) {
-            if (typeof page === 'undefined') {
-                page = 1;
-            }
-            var str = 'api/frontend/store/listproduct/' + this.activeItemId + '?page=' + page;   
-            axios.get(str)
-            .then(response => {
-                this.products = response.data;
-                
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        getResults(myarg) {
+            this.$router.push({
+                name: 'StoreSort',
+                params: {
+                    slug: this.activeItem,
+                    name_sort: myarg,
+                    category_id: this.activeItemId
+                }
+            })            
         },
         SortItem: function(page){
             if (typeof page === 'undefined') {
@@ -276,7 +278,7 @@ export default {
             }
         },
     },
-    created() {
+    mounted() {
         this.getListCategory();
         this.activeItemId = this.$route.params.category_id
         this.activeItem = this.$route.params.slug
