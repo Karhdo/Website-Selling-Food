@@ -78,7 +78,7 @@
                         </tr>
                     </table>
                     <div class="cart__products__btn">
-                        <router-link to="/Store" tag="button" class="btn__continue">
+                        <router-link :to="{name: 'StoreListItem', params: { slug: 'trai-cay', id: 17 },}" tag="button" class="btn__continue">
                             <b-icon icon="arrow-left"></b-icon>
                             TIẾP TỤC XEM SẢN PHẨM
                         </router-link>
