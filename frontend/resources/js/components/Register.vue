@@ -8,7 +8,7 @@
                 </form> -->
                     <div class="register__form-username">
                         Tên tài khoản hoặc địa chỉ email *<br />
-                        <input type="text"  v-model="form.email"/>
+                        <input type="email"  v-model="form.email"/>
                     </div>
                     <div class="register__form-name">
                         Họ và Tên *<br />
@@ -61,7 +61,9 @@ export default {
                 this.$router.push({name: 'Login'})
             })
             .catch(error => {
-                
+                if(error.message == "Request failed with status code 422") {
+                    alert("Xác thực mật khẩu không đúng. Vui lòng kiểm tra lại")
+                }
             })
         }
     }
