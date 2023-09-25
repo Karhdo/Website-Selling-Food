@@ -1,33 +1,41 @@
 # Website Selling Food
-## Các công nghệ sử dụng
+## Technologies Used
 - Front-end: HTML, CSS, Javascript, VueJS, Laravel.
 - Back-end: Laravel, MySQL.
-## Yêu cầu và Hướng dẫn sử dụng
-### Yêu cầu
+
+## Requirements and Usage Instructions
+### Requirements
 - Git Bash, Visual Studio Code.
 - PHP version 7.4.25, NodeJS, VueJS version 2.
-### Hướng dẫn sử dụng
-#### Clone git repository
-- Khởi động XAMPP.
-- Mở terminal Git Bash tại thư mục htdocs của XAMPP.
-- Chạy lệnh `git clone https://github.com/ducducqn123/Website-Selling-Food.git`
-#### Import database
-- Mở trang **phpMyAdmin**.
-- Tạo database mới có tên: selling_food
-- Improt database [selling_food.sql](database/selling_food.sql) vào trang **phpMyAdmin**.
+
+### Usage Instructions
+#### Clone the Git Repository
+- Start XAMPP.
+- Open the Git Bash terminal in the htdocs directory of XAMPP.
+- Run the command `git clone https://github.com/ducducqn123/Website-Selling-Food.git`.
+
+#### Import the Database
+- Open the **phpMyAdmin** page.
+- Create a new database named: selling_food.
+- Import the database [selling_food.sql](database/selling_food.sql) into the **phpMyAdmin** page.
+
 #### Download Composer
-- Vào đường link https://getcomposer.org/download/ chọn Composer-Setup.exe để tải composer
-#### Run code:
-- Tiếp tục ở terminal vừa clone git repository.  
+- Go to the link [Composer Download](https://getcomposer.org/download/) and select Composer-Setup.exe to download Composer.
+
+#### Run the Code
+- Continue in the terminal where you cloned the Git repository.
 - Run **serve Back-end**: `cd finalproject`
-  - Thực hiện lệnh `php artisan serve`
-  - Code Back-end được chạy ở port 8000(localhost:8000/admin).
-  - User: 19521383@gmail.com/ Password: 123123123
-- Mở thêm một terminal mới để run **serve Front-end**: `cd frontend`
-  - Thực hiện lệnh: `php artisan serve --port=8060`
-- Mở thêm một terminal mới chạy giao diện: `cd frontend`
-  - Cài đặt `npm install --save-dev cross-env`
-  - Thực hiện lệnh: `npm run watch`
-  - Code Front-end được chạy ở port 8060(localhost:8060).
+  - Execute the command `php artisan serve`
+  - The Back-end code will run on port 8000 (localhost:8000/admin).
+  - User: 19521383@gmail.com / Password: 123123123.
+
+- Open a new terminal to run **serve Front-end**: `cd frontend`
+  - Execute the command: `php artisan serve --port=8060`.
+
+- Open another new terminal to run the interface: `cd frontend`
+  - Install `npm install --save-dev cross-env`
+  - Execute the command: `npm run watch`
+  - The Front-end code will run on port 8060 (localhost:8060).
+
 ## Demo
-<p align='center'><img style="height: 800px" src="https://github.com/ducducqn123/Website-Selling-Food/blob/ce4ab91b045d777d82beee1935e5df8eed736797/demo.png"></p>
+![Demo Image](https://github.com/ducducqn123/Website-Selling-Food/blob/ce4ab91b045d777d82beee1935e5df8eed736797/demo.png)
